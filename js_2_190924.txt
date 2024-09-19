@@ -1,0 +1,70 @@
+
+
+// 10.1 Booleans
+
+
+
+let stock = 0;
+let respuesta="";
+
+    if(stock > 0 && stock < 50){///preguntar
+        stock=100;//asignar valor
+        respuesta="stock actualizado a " + stock;
+    }else{
+        respuesta="si hay stock";
+    }
+    console.log(respuesta);
+
+
+let isOnline = true;
+let hasAccess = true;
+let booleanOutput = "";
+if (isOnline && hasAccess) {
+    booleanOutput = "El usuario esta en linea y tiene acceso.";
+} else {
+    booleanOutput = "El usuario no tiene acceso.";
+}
+console.log(booleanOutput);
+
+// 10.2 Arrays o Arreglos
+let arreglovacio =[];
+let fruits = ["manzana", "banana", "naranja","pera"];
+let arrayOutput = `Frutas: ${fruits.join(", ")} (Total: ${fruits.length})`;
+console.log(arrayOutput);
+
+// 10.5 Objetos
+let person = {
+    name: "Pedro",
+    age: 30,
+    isStudent: false,
+    saludar: function() {
+        return `Hola, mi nombre es ${this.name}`;
+    }
+};
+let objectOutput = person.saludar();
+console.log(objectOutput);
+
+// 10.8 Funciones
+function suma(a, b) {
+    return a + b;
+}
+let sumOutput = `La suma es de : ${suma(8, 7.5)}`;
+console.log(sumOutput);
+
+// 10.9 Retorno de Funciones
+function getSaludar(name) {
+    return `Hola, ${name}!`;
+}
+let greetingOutput = getSaludar("Maria");
+console.log(greetingOutput);
+
+// Mostrando todos los resultados en el HTML
+document.getElementById('output').innerHTML = `
+    <h2>Resultados:</h2>
+    <p>${booleanOutput}</p>
+    <p>${arrayOutput}</p>
+    <p>${objectOutput}</p>
+    <p>${sumOutput}</p>
+    <p>${greetingOutput}</p>
+`;
+
