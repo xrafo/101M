@@ -15,24 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const price = document.getElementById('price').value;
                 const quantity = document.getElementById('quantity').value;
 
+
                 // Cargar productos almacenados en localStorage
                 const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
 
-                // Crear objeto producto
+                // Crear nuevo producto con un ID único
                 const product = {
+                    id: Date.now(),
                     description,
                     price,
                     quantity
                 };
 
-                // Guardar producto en localStorage
+                // Guardar el nuevo producto en localStorage
                 storedProducts.push(product);
                 localStorage.setItem('products', JSON.stringify(storedProducts));
 
-                // Limpiar formulario
+                // Limpiar formulario y mostrar mensaje
                 productForm.reset();
-
                 alert('Producto creado con éxito!');
+                window.location.href = 'products.html'; // Redirigir a la lista de productos
             });
         }
     }
@@ -59,12 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderProduct(product) {
             const productDiv = document.createElement('div');
             productDiv.classList.add('product-item');
+            productDiv.setAttribute('data-id', product.id); // Agregar ID único a cada elemento
             productDiv.innerHTML = `
                 <h2>${product.description}</h2>
                 <p>Precio: $${product.price}</p>
                 <p>Cantidad: ${product.quantity}</p>
+                <button class="delete-button">Eliminar</button>
             `;
             productList.appendChild(productDiv);
+
+            // Agregar eventos a los botones de eliminar
+            const deleteButton = productDiv.querySelector('.delete-button');
+            deleteButton.addEventListener('click', () => deleteProduct(product.id));
+        }
+
+        // Función para eliminar un producto
+        function deleteProduct(id) {
+            const updatedProducts = storedProducts.filter(product => product.id !== id);
+            localStorage.setItem('products', JSON.stringify(updatedProducts));
+            location.reload(); // Recargar la página para mostrar los cambios
         }
     }
 });
