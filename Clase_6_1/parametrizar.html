@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametrización de Costos por Trabajador</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Parametrización de Costos por Trabajador</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Configurar Costo para Trabajador</h2>
+            <form id="parametrizationForm">
+                <label for="workerSelect">Seleccione un Trabajador:</label>
+                <select id="workerSelect" name="workerSelect" required>
+                    <option value="" disabled selected>Seleccione un trabajador</option>
+                    <!-- Las opciones se llenarán dinámicamente -->
+                </select>
+
+                <label for="workerRate">Costo por hora del Trabajador:</label>
+                <input type="number" id="workerRate" name="workerRate" min="0" step="0.01" required>
+
+                <button type="submit">Guardar Costo</button>
+            </form>
+        </section>
+
+        <section id="currentRates">
+            <h2>Costos Actuales por Trabajador</h2>
+            <ul id="workersList">
+                <!-- La lista se llenará dinámicamente -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Parametrización de Costos</p>
+    </footer>
+
+    <script src="js/parametrizar.js"></script>
+</body>
+</html>

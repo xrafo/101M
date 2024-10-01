@@ -1,0 +1,179 @@
+/* style.css */
+
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f6f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #0077b5; /* Color similar al de LinkedIn */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* Estilos del contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #0077b5;
+}
+
+/* Estilos de los formularios */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select,
+form input[type="file"] {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus,
+form input[type="file"]:focus {
+    border-color: #0077b5;
+    outline: none;
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #0077b5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #005f8c;
+}
+
+/* Estilos para la sección de resultados */
+#resultSection {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f4f9;
+    border-left: 4px solid #0077b5;
+    border-radius: 4px;
+}
+
+#resultSection h2 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #005f8c;
+}
+
+#resultSection p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Estilos para la lista de costos actuales */
+#currentRates ul {
+    list-style-type: none;
+}
+
+#currentRates li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+#currentRates li span {
+    font-weight: 600;
+    color: #0077b5;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #ddd;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    color: #555;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para mensajes ocultos */
+.hidden {
+    display: none;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    main {
+        padding: 20px 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    form button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    #resultSection p {
+        font-size: 1em;
+    }
+}

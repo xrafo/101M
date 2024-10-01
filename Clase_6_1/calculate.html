@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Pago de Trabajador</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calcular Pago de Trabajador</h1>
+    </header>
+
+    <main>
+        <form id="calculateForm">
+            <label for="workerSelect">Seleccione un Trabajador:</label>
+            <select id="workerSelect" name="workerSelect" required>
+                <option value="" disabled selected>Seleccione un trabajador</option>
+                <!-- Las opciones se llenarán dinámicamente -->
+            </select>
+
+            <label for="hoursWorked">Horas trabajadas:</label>
+            <input type="number" id="hoursWorked" name="hoursWorked" min="0" required>
+
+            <button type="submit">Calcular Pago</button>
+        </form>
+
+        <section id="resultSection" class="hidden">
+            <h2>Resultado</h2>
+            <p id="paymentResult">El pago total es: <span id="totalPayment"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Cálculo de Pago de Horas</p>
+    </footer>
+
+    <script src="js/calculate.js"></script>
+</body>
+</html>
